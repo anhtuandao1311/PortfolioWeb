@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/* common styles */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+    outline:none;
+    font: "Jura",sans-serif;
+
+}
+
+html{
+    font-size: 62.5%;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* end of common style */
+
+/* mouse circle */
+.mouse-circle{
+    width: 6rem;
+    height: 6rem;
+    border: .1rem solid #c7a622;
+    animation: mouseciranim 10s infinite linear;
+}
+
+@keyframes mouseciranim{
+    0%{
+        width: 6rem;
+        height: 6rem;
+    }
+    25%{
+        width: 8rem;
+        height: 8rem;
+    }
+    35%{
+        width: 4rem;
+        height: 4rem;
+    }
+    70%{
+        width: 8rem;
+        height: 8rem;
+    }
+    100%{
+        width: 6rem;
+        height: 6rem;
+    }
+}
+
+.mouse-dot{
+    width: 0.5rem;
+    height: 00.5rem;
+    background-color: #9b0e0e;
+    animation: mousedotanim 10s infinite linear;
+}
+
+@keyframes mousedotanim{
+    0%{
+        width: 0.5rem;
+        height: 0.5rem;
+    }
+    55%{
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+    100%{
+        width: 0.5rem;
+        height: 0.5rem;
+    }
+
+}
+
+.mouse-circle,.mouse-dot{
+    border-radius: 50%;
+    position: fixed;
+    z-index: 300;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+}
+/* end of mouse circle */
+
+
+/* page background */
+.page-bg{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),url(images/bg.jpg)center no-repeat;
+    background-size: cover;
+}
+/* end of page background */
+
+/* section 1 */
+.section-1{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+   
+}
+/* logo */
+.logo{
+    position: absolute;
+    top:2rem;
+    left:5rem;
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: #fff;
+}
+/* end of logo */
+
+/* animated circles */
+.circles{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,1fr);
+}
+
+.circle{
+    width: 22rem;
+    height: 22rem;
+    border-radius: 50%;
+    align-self: center;
+    background-color: red;
+    justify-self: center;
+    opacity: 0.5;
+    position: relative;
+    transition: left 2s,top 2s;
+    top:0;
+    left: 0;
+}
+
+.circle-1{
+    background: url(images/landing/road_winding_mountains.jpg)center no-repeat;
+    background-size: cover;
+    background-clip: border-box;
+    border: 0.5rem dotted #a14b1a;
+}
+.circle-2{
+    background: url(images/landing/starry_sky_night_stars.jpg)center no-repeat;
+    background-size: cover;
+    background-clip: border-box;
+    border: 0.5rem dashed #271f0a;
+}
+.circle-3{
+    background: url(images/landing/city_night_moon.jpg)center no-repeat;
+    background-size: cover;
+    background-clip: border-box;
+    border: 1rem double #9b0e0e;
+}
+.circle-4{
+    background: url(images/landing/rain_transport_city.jpg)center no-repeat;
+    background-size: cover;
+    background-clip: border-box;
+    border: 0.7rem double #fff;
+}
+
+.main-circle{
+    width: 55rem;
+    height: 55rem;
+    position: absolute;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.main-circle img{
+    mix-blend-mode:difference;
+    position: relative;
+    transition: left 2s,top 2s;
+    top:0;
+    left: 0;
+}
+/* end of animated circles */
+.featured-text{
+    font-size: 2rem;
+    color:#fff;
+    text-transform: uppercase;
+    width: 0;
+    word-wrap: break-word;
+    line-height: 2.5;
+    position: sticky;
+    top: 0;
+}
+
+.featured-text-1{
+    margin: 0 auto 0 10rem;
+}
+.featured-text-2{
+    margin: 0 10rem 0 auto;
+}
+/* featured text */
+
+/* end of featured text */
+/* end of section 1 */
