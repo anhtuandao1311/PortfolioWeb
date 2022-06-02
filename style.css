@@ -21,6 +21,93 @@ html{
     justify-content: center;
     align-items: center;
 }
+
+/* main button */
+.main-btn{
+    position: absolute;
+    bottom: 3rem;
+    width: 10rem;
+    height: 10rem;
+    background-color:#1b1717;
+    border-radius: 50%;
+    border: 0.2rem dotted #fff;
+    padding: 0.1rem;
+    overflow: hidden;
+}
+
+.main-btn-content{
+    width: 100%;
+    height: 100%;
+    border: 0.2rem dotted #8f7608;
+    border-radius: 50%;
+    transform: rotate(40deg);
+    transition: transform 0.2s,border 0.2s;
+
+}
+
+.main-btn:hover .main-btn-content {
+    transform:rotate(60deg);
+    border:0.2rem dotted #1b1717;
+    transition: transform 0.2s 0.5s,border 0.2s;
+}
+
+.main-btn-line{
+    position: absolute;
+    top: 4rem;
+    width: 3rem;
+    height: 0.5rem;
+    border: 0.1rem solid #fff;
+}
+
+.main-btn-line:nth-child(1){
+    transform: rotateZ(-45deg) translateX(0rem) translateY(-0.75rem);
+    transform-origin: left center;
+    border-right: none;
+}
+
+.main-btn-line:nth-child(2){
+    transform: rotateZ(45deg) translateX(0rem) translateY(-0.75rem);
+    transform-origin: right center;
+    border-left: none;
+}
+
+.main-btn-line:nth-child(3){
+    transform: rotateZ(90deg) translateX(-0.8rem);
+    border-left: none;
+}
+
+.main-btn span{
+    position: absolute;
+    bottom: 1.8rem;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.ripple{
+    position:absolute;
+    width: 0;
+    height: 0;
+    background-color: #410957;
+    border-radius: 50%;
+    transform: translate(-50%,-50%);
+    animation: rippleanim 0.5s forwards;
+}
+
+@keyframes rippleanim{
+    0%{
+        width: 0;
+        height: 0;
+    }
+    100%{
+        width: 210%;
+        height: 210%;
+    }
+}
+
+/* end of main button */
+
 /* end of common style */
 
 /* mouse circle */
@@ -83,6 +170,7 @@ html{
     z-index: 300;
     transform: translate(-50%,-50%);
     opacity: 0;
+    pointer-events: none;
 }
 /* end of mouse circle */
 
@@ -92,7 +180,7 @@ html{
     position: fixed;
     width: 100%;
     height: 100vh;
-    background: linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),url(images/bg.jpg)center no-repeat;
+    background: linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),url(images/landing/5997806b417a45fdf9e6a7dbd54dc8f0.jpg)center no-repeat;
     background-size: cover;
 }
 /* end of page background */
@@ -146,24 +234,28 @@ html{
     background-size: cover;
     background-clip: border-box;
     border: 0.5rem dotted #a14b1a;
+    margin-left: -10rem;
 }
 .circle-2{
     background: url(images/landing/starry_sky_night_stars.jpg)center no-repeat;
     background-size: cover;
     background-clip: border-box;
     border: 0.5rem dashed #271f0a;
+    margin-right: -10rem;
 }
 .circle-3{
     background: url(images/landing/city_night_moon.jpg)center no-repeat;
     background-size: cover;
     background-clip: border-box;
-    border: 1rem double #9b0e0e;
+    border: 1rem double #340e57;
+    margin-left: -10rem;
 }
 .circle-4{
     background: url(images/landing/rain_transport_city.jpg)center no-repeat;
     background-size: cover;
     background-clip: border-box;
     border: 0.7rem double #fff;
+    margin-right: -10rem;
 }
 
 .main-circle{
@@ -172,6 +264,11 @@ html{
     position: absolute;
     overflow: hidden;
     border-radius: 50%;
+    transition: width 0.2s, height 0.2s;
+}
+.main-circle:hover{
+    width: 63rem;
+    height: 63rem;
 }
 
 .main-circle img{
@@ -182,6 +279,8 @@ html{
     left: 0;
 }
 /* end of animated circles */
+
+/* featured text */
 .featured-text{
     font-size: 2rem;
     color:#fff;
@@ -199,7 +298,70 @@ html{
 .featured-text-2{
     margin: 0 10rem 0 auto;
 }
-/* featured text */
-
 /* end of featured text */
+
 /* end of section 1 */
+
+/* section 2 */
+.section-2{
+    position:relative;
+    padding: 10rem 10rem 15rem 10rem;
+}
+
+.section-2-heading{
+    font-size: 2rem;
+    font-weight: 300;
+    color: #fff;
+    text-transform: uppercase;
+    position:absolute;
+    top:42%;
+    left:10rem;
+    transform: translateY(-30%);
+    width: 0;
+    word-break: break-all;
+    line-height: 4;
+}
+
+/* about me text */
+.about-me-text{
+    width: 80%;
+    margin:auto;
+}
+
+.about-me-text span{
+    font-family: "Poppins",sans-serif;
+    font-size: 14rem;
+    font-weight:lighter;
+    color: #aaa;
+    letter-spacing: 0.5rem;
+    line-height: 1;
+    text-shadow: 0 0 1rem #52148d;
+    position: relative;
+    mix-blend-mode: color-dodge;
+}
+
+@keyframes aboutmeanim{
+    0%{
+        color: #aaa;
+        top:0;
+    }
+    2%,98%{
+        color: #fff;
+        top:2rem;
+    }
+    100%{
+        color: #aaa;
+        top:0;
+    }
+}
+
+/* end of about me text */
+
+/* section 2 main button */
+.section-2 .main-btn{
+    left:50%;
+    bottom:-5rem;
+    transform: translateX(-50%);
+}
+/* end of section 2 main button */
+/* end of section 2 */

@@ -55,3 +55,39 @@ document.body.addEventListener("mouseleave",()=>{
     mousecir.style.opacity="0";
     mousedot.style.opacity="0";
 } );
+
+// main button
+
+const mainbtns=document.querySelectorAll(".main-btn");
+mainbtns.forEach((btn)=>{
+    let ripple;
+    btn.addEventListener("mouseenter",(e)=>{
+        const left=e.clientX - e.target.getBoundingClientRect().left;
+        const top=e.clientY - e.target.getBoundingClientRect().top;
+    
+        ripple = document.createElement("div");
+        ripple.classList.add("ripple");
+        ripple.style.left=`${left}px`;
+        ripple.style.top=`${top}px`;
+        btn.prepend(ripple);
+    });
+    btn.addEventListener("mouseleave",()=>{
+        btn.removeChild(ripple);
+    })
+})
+
+// end of main button
+
+// about me text
+const aboutme = document.querySelector(".about-me-text");
+const write= "I am a Computer Science student at Ho Chi Minh city University of Technology & I am really into tech stuff and willing to learn more.";
+Array.from(write).forEach((char)=>{
+    const span=document.createElement("span")
+    span.textContent=char;
+    aboutme.appendChild(span);
+    span.addEventListener("mouseenter",(e)=>{
+        e.target.style.animation="aboutmeanim 20s infinite";
+    })
+});
+
+// end of about me text
