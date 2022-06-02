@@ -86,8 +86,29 @@ Array.from(write).forEach((char)=>{
     span.textContent=char;
     aboutme.appendChild(span);
     span.addEventListener("mouseenter",(e)=>{
-        e.target.style.animation="aboutmeanim 20s infinite";
+        e.target.style.animation="aboutmeanim 12s infinite";
     })
 });
 
 // end of about me text
+
+// projects
+const container = document.querySelector(".container");
+const projects=document.querySelectorAll(".project");
+projects.forEach((project)=>{
+    project.addEventListener("mouseenter",()=>{
+        project.firstElementChild.style.top = `-${project.firstElementChild.offsetHeight-project.offsetHeight + 20}px`;
+    });
+    project.addEventListener("mouseleave",()=>{
+        project.firstElementChild.style.top=`2rem`;
+    })
+    // big project image
+    project.addEventListener("click",()=>{
+        const wrapper = document.createElement("div");
+        wrapper.className="proj-img-wrapper";
+        container.appendChild(wrapper);
+    });
+    // end of big project image
+});
+
+// end of projects
