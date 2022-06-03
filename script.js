@@ -95,6 +95,7 @@ Array.from(write).forEach((char)=>{
 // projects
 const container = document.querySelector(".container");
 const projects=document.querySelectorAll(".project");
+const projecthidebtn=document.querySelector(".project-hide-btn");
 projects.forEach((project)=>{
     project.addEventListener("mouseenter",()=>{
         project.firstElementChild.style.top = `-${project.firstElementChild.offsetHeight-project.offsetHeight + 20}px`;
@@ -105,8 +106,22 @@ projects.forEach((project)=>{
     // big project image
     project.addEventListener("click",()=>{
         const wrapper = document.createElement("div");
-        wrapper.className="proj-img-wrapper";
+        wrapper.className="project-img-wrapper";
         container.appendChild(wrapper);
+        const bigimg=document.createElement("img");
+        bigimg.className="project-img";
+        const imgpath=project.firstElementChild.getAttribute("src").split(".")[0];
+
+        bigimg.setAttribute("src",`${imgpath}-big.jpg`);
+        wrapper.appendChild(bigimg);
+        document.body.style.overflowY="hidden";
+        projecthidebtn.classList.add("change");
+        projecthidebtn.onclick = () => {
+            projecthidebtn.classList.remove("change");
+            wrapper.remove();
+            document.body.style.overflowY="scroll";
+        }
+
     });
     // end of big project image
 });
