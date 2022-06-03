@@ -14,6 +14,7 @@
 
 html{
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
 .center{
@@ -107,6 +108,24 @@ html{
 }
 
 /* end of main button */
+
+/* section heading */
+
+.section-heading{
+    font-size: 2rem;
+    font-weight: 300;
+    color: #fff;
+    text-transform: uppercase;
+    position:absolute;
+    top:42%;
+    left:10rem;
+    transform: translateY(-30%);
+    width: 0;
+    word-break: break-all;
+    line-height: 4;
+}
+
+/* end of section heading */
 
 /* end of common style */
 
@@ -308,20 +327,6 @@ html{
     padding: 10rem 10rem 15rem 10rem;
 }
 
-.section-2-heading{
-    font-size: 2rem;
-    font-weight: 300;
-    color: #fff;
-    text-transform: uppercase;
-    position:absolute;
-    top:42%;
-    left:10rem;
-    transform: translateY(-30%);
-    width: 0;
-    word-break: break-all;
-    line-height: 4;
-}
-
 /* about me text */
 .about-me-text{
     width: 80%;
@@ -393,6 +398,7 @@ html{
     border: 0.2rem dotted #410957;
     border-radius: 0.5rem;
     cursor:pointer;
+    transition: opacity 0.5s;
 }
 
 .project img{
@@ -475,4 +481,27 @@ html{
 /* end of project hide button */
 
 /* end of projects */
+
+/* projects button */
+.projects-btn{
+    left: 50%;
+    transform:translateX(-50%);
+}
+
+.projects-btn .main-btn-line{
+    transition: all 0.5s;
+}
+
+.change > .main-btn-line:nth-child(1){
+    transform: rotateZ(45deg) translateX(-1.25rem) translateY(-0.5rem);
+}
+.change > .main-btn-line:nth-child(2){
+    transform: rotateZ(-45deg) translateX(1.25rem) translateY(-0.5rem);
+}
+.change > .main-btn-line:nth-child(3){
+    transform: rotateZ(90deg) translateX(-1.2rem);
+    border-left: 0.1rem solid #fff;
+    border-right: none;
+}
+/* end of projects button */
 /* end of section 3 */
