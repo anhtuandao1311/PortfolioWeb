@@ -505,3 +505,146 @@ html{
 }
 /* end of projects button */
 /* end of section 3 */
+
+/* section 4 */
+.section-4{
+    position: relative;
+    width:100%;
+}
+
+/* services */
+.services-wrapper{
+    width: 100%;
+    flex-direction: column;
+}
+
+.service{
+    width:70%;
+    margin:2rem 0rem;
+    border-bottom: 0.5rem solid #5d0e7c;
+}
+
+.service-btn{
+    width:100%;
+    position: relative;
+    display: block;
+    height: 15rem;
+}
+.service-btn span{
+    font-family: "Poppins",sans-serif;
+    font-size: 10rem;
+    font-style: italic;
+    font-weight: bold;
+    color: #5d0e7c;
+    position: absolute;
+    right:0;
+    transition:right 0.5s;
+}
+.service-text{
+    font-size: 5rem;
+    color:#777;
+    letter-spacing: 0.1rem;
+    height: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.2s;
+}
+
+.change.service-text{
+    height: 15rem;
+    visibility: visible;
+    opacity:1;
+    transition: height 0.5s, opacity 0.5s 0.5s;
+
+}
+/* end of services */
+/* end of section 4 */
+
+/* section 5 */
+.section-5{
+    position: relative;
+    height: 100vh;
+    flex-direction: column;
+}
+
+/* form */
+.form-heading{
+    font-family: "Poppins",sans-serif;
+    font-size: 6rem;
+    font-weight: 400;
+    color: #5d0e7c;
+    letter-spacing: 0.3rem;
+    margin-bottom: 3rem ;
+    transition: opacity 0.3s;
+
+}
+.contact-form{
+    flex-direction: column;
+}
+.contact-form-input{
+    width: 60rem;
+    padding:0.5rem;
+    margin: 1rem 0;
+    background-color: rgba(255,255,255,0.1);
+    border: 0.1rem solid #5d0e7c;
+    font-size: 1.7rem;
+    font-weight: bold;
+    color:#aaa;
+    letter-spacing: 0.1rem;
+    height: 5rem;
+    
+}
+
+.contact-form-textarea{
+    height: 20rem;
+    resize:none;
+    
+
+}
+.form-submit-btn{
+    width: 20rem;
+    height: 5rem;
+    background-color: #5d0e7c;
+    border: none;
+    align-self: flex-start;
+    font-size: 1.8rem;
+    color: #fff;
+}
+/* end of form */
+
+/* slideshow */
+.slideshow{
+    display: flex;
+    width: 50rem;
+    margin-top: 10rem;
+    padding:0 2rem;
+}
+.slideshow-link{
+    width: 20%;
+    filter: brightness(0.5);
+    transition:filter 1.5s;
+}
+
+.slideshow-link:nth-child(1),.slideshow-link:nth-child(5){
+    transition: width 0.5s, opacity 0.5s;
+}
+
+.slideshow-link:nth-child(3)
+{
+    transition: filter 0.5s;
+}
+.slideshow-link img{
+    width: 100%;
+    padding: 0 1rem;
+}
+
+.faded-out{
+    opacity: 0;
+    width: 0;
+}
+
+.light{
+    filter: brightness(1.5);
+}
+/* end of slideshow */
+/* end of section 5 */

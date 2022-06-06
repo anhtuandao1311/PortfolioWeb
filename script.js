@@ -163,3 +163,60 @@ projectsbtn.addEventListener("click",(e)=>{
 // end of projects button
 
 // end of projects
+
+// section 4
+document.querySelectorAll(".service-btn").forEach((service)=>{
+    service.addEventListener("click",(e)=>{
+        e.preventDefault();
+
+        const servicetext=service.nextElementSibling;
+        servicetext.classList.toggle("change");
+
+        const rightposition = servicetext.classList.contains("change") ? `calc(100% - ${getComputedStyle(service.firstElementChild).width})` : 0;
+        service.firstElementChild.style.        right=rightposition;
+    });
+});
+// end of section 4
+
+// section 5
+// form
+const formheading = document.querySelector(".form-heading");
+const forminputs = document.querySelectorAll(".contact-form-input");
+forminputs.forEach((input)=>{
+    input.addEventListener("focus",()=>{
+    formheading.style.opacity="0";
+    setTimeout(()=>{
+        formheading.textContent=`Your ${input.placeholder}`;
+        formheading.style.opacity="1";
+        },300);
+    });
+
+    input.addEventListener("blur",()=>{
+        formheading.style.opacity="0";
+        setTimeout(()=>{
+            formheading.textContent="Let's Talk";
+            formheading.style.opacity="1";
+            },300);
+        });
+});
+
+// end of form
+
+// slideshow
+const slideshow = document.querySelector(".slideshow");
+setInterval(()=>{
+    const firsticon = slideshow.firstElementChild;
+    firsticon.classList.add("faded-out");
+    const thirdicon = slideshow.children[3];
+    thirdicon.classList.add("light");
+    thirdicon.previousElementSibling.classList.remove("light");
+    setTimeout(()=>{
+        slideshow.removeChild(firsticon);
+        slideshow.appendChild(firsticon);
+        setTimeout(()=>{
+            firsticon.classList.remove("faded-out");
+        },500);
+    },500);
+},3000);
+// end of slideshow
+// end of section 5
