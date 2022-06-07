@@ -78,6 +78,48 @@ mainbtns.forEach((btn)=>{
 
 // end of main button
 
+// progress bar
+const halfcircles = document.querySelectorAll(".half-circle");
+const halfcircletop = document.querySelector(".half-circle-top");
+const progressbarcircle = document.querySelector(".progress-bar-circle");
+const progressbarfn = ()=>{
+    const pageviewportheight= window.innerHeight;
+    const pageheight = document.documentElement.scrollHeight;
+    const scrolledportion = window.pageYOffset;
+    const scrolledportiondegree = (scrolledportion/(pageheight - pageviewportheight))*360;
+    halfcircles.forEach((ele)=>{
+        ele.style.transform = `rotate(${scrolledportiondegree}deg)`;
+        if(scrolledportiondegree>=180){
+            halfcircles[0].style.transform = "rotate(180deg)";
+            halfcircletop.style.opacity = "0";
+        }else{
+            halfcircletop.style.opacity = "1";
+        }
+    });
+};
+
+// end of progress bar
+
+// navigation
+const menuicon = document.querySelector(".menu-icon");
+const navbar = document.querySelector(".navbar");
+document.addEventListener("scroll",()=>{
+    menuicon.classList.add("show-menu-icon");
+    navbar.classList.add("hide-navbar");
+    if(window.scrollY===0){
+        menuicon.classList.remove("show-menu-icon");
+        navbar.classList.remove("hide-navbar");
+    }
+
+    progressbarfn();
+});
+
+menuicon.addEventListener("click",()=>{
+    menuicon.classList.remove("show-menu-icon");
+    navbar.classList.remove("hide-navbar");
+})
+// end of navigation
+
 // about me text
 const aboutme = document.querySelector(".about-me-text");
 const write= "I am a Computer Science student at Ho Chi Minh city University of Technology & I am really into tech stuff and willing to learn more.";
