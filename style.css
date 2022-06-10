@@ -207,14 +207,15 @@ html{
 /* progress bar */
 .progress-bar{
     position: fixed;
-    bottom: 8rem;
-    right: 8rem;
+    bottom: 4rem;
+    right: 4rem;
     border-radius: 50%;
     width: 8rem;
     height: 8rem;
     background-color: #fff;
     z-index: 200;
     overflow: hidden;
+    transform: translate(-50%,-50%);
 }
 
 .half-circle,.half-circle-top{
@@ -224,6 +225,7 @@ html{
     top: 0;
     left:0;
     transform-origin: right center;
+    pointer-events: none;
 
 }
 
@@ -237,20 +239,6 @@ html{
     background-color: #fff;
 }
 
-/* .progress-bar:hover .half-circle-top{
-    opacity: 0;
-    transition:  opacity 0s 1s;
-}
-
-.progress-bar:hover .half-circle:nth-child(1){
-    transform: rotate(180deg);
-    transition: transform 1s linear;
-}
-.progress-bar:hover .half-circle:nth-child(2){
-    transform: rotate(360deg);
-    transition: transform 2s linear;
-} */
-
 .progress-bar-circle{
     width: 7.8rem;
     height: 7.8rem;
@@ -259,6 +247,8 @@ html{
     color: #fff;
     font-size: 4rem;
     z-index: 200;
+    transition: transform 0.5s;
+    pointer-events: none;
 }
 /* end of progress bar */
 
@@ -268,8 +258,8 @@ html{
 /* menu icon */
 .menu-icon{
     position:fixed;
-    top:0;
-    right: 6rem;
+    top:3.5rem;
+    right: 0;
     width: 12rem;
     height: 7rem;
     flex-direction: column;
@@ -278,6 +268,7 @@ html{
     transition: opacity 0.2s;
     z-index: 100;
     cursor: pointer;
+    transform: translate(-50%,-50%);
 }
 
 .menu-icon-line{
@@ -528,6 +519,7 @@ html{
     position: absolute;
     top:2rem;
     opacity:0.5;
+    pointer-events: none;
     transition: top 3s 0.2s, opacity 0.2s;
 }
 
@@ -548,6 +540,8 @@ html{
     background-color: rgba(0,0,0,0.9);
     animation: wrapperanim 1s forwards;
     overflow: hidden scroll;
+    z-index: 100;
+    scroll-behavior: smooth;
 }
 
 @keyframes wrapperanim{
@@ -564,6 +558,7 @@ html{
     border-radius: 0.5rem;
     padding: 7rem 20rem;
     opacity:0.9;
+    display: block;
     transform-origin: top center;
     animation: imganim 1s 0.5s both;
 }
@@ -589,7 +584,7 @@ html{
     font-size: 2rem;
     letter-spacing: 0.1rem;
     cursor: pointer;
-    z-index: 10;
+    z-index: 200;
     transform: scale(0);
     visibility: hidden;
 }
@@ -660,6 +655,7 @@ html{
     position: absolute;
     right:0;
     transition:right 0.5s;
+    pointer-events: none;
 }
 .service-text{
     font-size: 5rem;
@@ -769,3 +765,95 @@ html{
 }
 /* end of slideshow */
 /* end of section 5 */
+
+/* responsive */
+@media(max-width: 1500px){
+.circle{
+    width: 15rem;
+    height: 15rem;
+}
+.main-circle{
+    width: 45rem;
+    height: 45rem;
+}
+
+.main-circle:hover{
+    width: 55rem;
+    height: 55rem;
+}
+.main-circle img{
+    width: 160%;
+    height: 160%;
+}
+.about-me-text span{
+    font-size: 11rem;
+
+}
+.section-4{
+    margin-bottom: 10rem;
+}
+.service-btn span{
+    font-size: 9rem;
+}
+.service-text{
+    font-size: 4rem;
+}
+}
+@media(max-width: 1350px){
+.main-btn{
+    width:12.5rem;
+    height: 12.5rem;
+}
+.circle{
+    display: none;
+}
+.progress-bar{
+    right: 1rem;
+    bottom: 0;
+}
+.about-me-text span{
+    font-size: 10rem;
+}
+}
+
+@media(max-width:1150px){
+html{
+    font-size: 55%;
+}
+.mouse-circle,.mouse-dot{
+    display: none;
+}
+.navbar-link{
+    margin: 0 2rem;
+}
+.main-circle{
+    width: 40rem;
+    height: 40rem;
+}
+.main-circle:hover{
+    width: 45rem;
+    height: 45rem;
+}
+.about-me-text span{
+    font-size: 7.5rem;
+}
+.project-img{
+    padding: 7rem 11rem;
+}
+.project-hide-btn{
+    right: 2rem;
+}
+.service-btn{
+    height: 12rem;
+}
+.service-btn span{
+    font-size: 8rem;
+}
+.service-text{
+    font-size: 3.5rem;
+}
+.slideshow{
+    margin:5rem 0;
+}
+}
+/* end of responsive */
