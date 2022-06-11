@@ -184,7 +184,7 @@
                 </div>
                 <div class="service">
                     <a href="#" class="service-btn pointer-enter">
-                        <span>Front-End Development</span>
+                        <span>Front-End</span>
                     </a>
                     <p class="service-text">HTML, CSS, Javascript, Frameworks, Version Control</p>
                 </div>
@@ -200,12 +200,21 @@
             <!-- form -->
             <div class="form-wrapper">
                 <h2 class="form-heading">Let's Talk</h2>
-                <form action="" class="contact-form center">
-                    <input type="text" class="contact-form-input pointer-enter" placeholder="Name">
-                    <input type="email" class="contact-form-input pointer-enter" placeholder="Email">
-                    <input type="text" class="contact-form-input pointer-enter" placeholder="Subject">
-                    <textarea class="contact-form-input pointer-enter contact-form-textarea" placeholder="Message"></textarea>
-                    <input type="submit" class="form-submit-btn pointer-enter" value="Send Request">
+                <form class="contact-form center">
+                    <input type="text" class="contact-form-input pointer-enter" placeholder="Name" id="name" autocomplete="off"/>
+                    <p class="message">Error Message</p>
+
+                    <input type="text" class="contact-form-input pointer-enter" placeholder="Email" id="email" autocomplete="off"/>
+                    <p class="message">Error Message</p>
+
+                    <input type="text" class="contact-form-input pointer-enter" placeholder="Subject" id="subject" autocomplete="off"/>
+                    <p class="message">Error Message</p>
+
+                    <textarea class="contact-form-input pointer-enter contact-form-textarea" placeholder="Message"
+                    id="message" autocomplete="off"></textarea>
+                    <p class="message">Error Message</p>
+                    
+                    <input type="submit" class="form-submit-btn pointer-enter" value="Send Request"/>
                 </form>
             </div>
             <!-- end of form -->

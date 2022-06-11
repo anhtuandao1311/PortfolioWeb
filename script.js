@@ -388,4 +388,56 @@ setInterval(()=>{
     },500);
 },3000);
 // end of slideshow
+
+// form validation
+const form = document.querySelector(".contact-form");
+const username = document.getElementById("name");
+const email = document.getElementById("email");
+const subject = document.getElementById("subject");
+const message = document.getElementById("message");
+const messages = document.querySelectorAll(".message");
+const error = (input,message) => {
+    input.nextElementSibling.classList.add("error");
+    input.nextElementSibling.textContent = message;
+};
+
+const success = () =>{
+    input.nextElementSibling.classList.remove("error");
+}
+
+const checkrequiredfields = (inputarr) => {
+    inputarr.forEach((input) => {
+        if(input.value.trim() === ""){
+            error(input,`${input.id} is required`);
+        }
+    });
+};
+
+const checklength = (input,min)=>{
+    if(input.value.trim().length<min){
+        error(input,`${input.id} must be at least ${min} characters`);
+    }else{
+        success(input);
+    }
+}
+
+const checkemail = (input)=>{
+    const re =
+  /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+
+  if(re.test(input.value.trim())){
+      success(input);
+  }else{
+      error(input,"Email is not valid");
+  }
+}
+form.addEventListener("submit",(e) => {
+    e.preventDefault();
+    checklength(username,2);
+    checklength(subject,2);
+    checklength(message,10);
+    checkemail(email);
+    checkrequiredfields([username,email,subject,message]);
+});
+// end of form validation
 // end of section 5
