@@ -18,29 +18,30 @@ const circles = document.querySelectorAll(".circle");
 const mainimg = document.querySelector(".main-circle img");
 let mx=0;
 let my=0;
+const z = 100;
 const animatedcir=(e,x,y)=>{
     if(x<mx){
         circles.forEach((circle)=>{
-            circle.style.left=`100px`;
+            circle.style.left=`${z}px`;
         });
-        mainimg.style.left=`100px`;  
+        mainimg.style.left=`${z}px`;  
     }else if(x>mx){
         circles.forEach((circle)=>{
-            circle.style.left=`-100px`;
+            circle.style.left=`-${z}px`;
         });
-        mainimg.style.left=`-100px`;
+        mainimg.style.left=`-${z}px`;
     }
    
     if(y<my){
         circles.forEach((circle)=>{
-            circle.style.top=`100px`;
+            circle.style.top=`${z}px`;
         });
-        mainimg.style.top=`100px`;
+        mainimg.style.top=`${z}px`;
     }else if(y>my){
         circles.forEach((circle)=>{
-            circle.style.top=`-100px`;
+            circle.style.top=`-${z}px`;
         });
-        mainimg.style.top=`-100px`;
+        mainimg.style.top=`-${z}px`;
     }
     mx=e.clientX;
     my=e.clientY;
