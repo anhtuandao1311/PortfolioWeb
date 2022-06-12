@@ -433,12 +433,16 @@ const checkemail = (input)=>{
   }
 }
 form.addEventListener("submit",(e) => {
-    e.preventDefault();
     checklength(username,2);
     checklength(subject,2);
     checklength(message,10);
     checkemail(email);
     checkrequiredfields([username,email,subject,message]);
+
+    const notvalid = Array.from(messages).find((message)=>{
+        return message.classList.contains("error");
+    })
+    notvalid && e.preventDefault();
 });
 // end of form validation
 // end of section 5
